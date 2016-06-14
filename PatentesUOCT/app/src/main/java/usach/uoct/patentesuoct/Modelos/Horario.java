@@ -1,4 +1,4 @@
-package usach.uoct.patentesuoct.model;
+package usach.uoct.patentesuoct.Modelos;
 
 /**
  * Created by esteban on 09-06-16.

@@ -1,4 +1,4 @@
-package usach.uoct.patentesuoct.utils;
+package usach.uoct.patentesuoct.Tools;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
-import usach.uoct.patentesuoct.model.Horario;
-import usach.uoct.patentesuoct.model.Vehiculo;
+import usach.uoct.patentesuoct.Modelos.Horario;
+import usach.uoct.patentesuoct.Modelos.Vehiculo;
 
 /**
  * Created by esteban on 09-06-16.
@@ -19,7 +19,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "BDPatentesUOCT.db";
     public static final int DATABASE_VERSION = 1;
-
     public static final String VEHICULOS_TABLE_NAME = "vehiculos";
     public static final String VEHICULOS_COLUMN_ID = "_id";
     public static final String VEHICULOS_COLUMN_NOMBRE= "nombre";
