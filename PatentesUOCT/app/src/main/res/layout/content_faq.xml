@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="usach.uoct.patentesuoct.Vistas.FAQ"
+    tools:showIn="@layout/activity_faq"
+    android:background="@mipmap/costanera">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:id="@+id/button21"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="clickHome" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuración"
+        android:id="@+id/button22"
+        android:layout_alignTop="@+id/button21"
+        android:layout_toRightOf="@+id/button21"
+        android:layout_toEndOf="@+id/button21"
+        android:onClick="clickConfiguracion" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F.A.Q"
+        android:id="@+id/button23"
+        android:layout_alignTop="@+id/button22"
+        android:layout_toRightOf="@+id/button22"
+        android:layout_toEndOf="@+id/button22"
+        android:onClick="clickFAQ"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Situación Ambiente"
+        android:id="@+id/button24"
+        android:layout_alignTop="@+id/button23"
+        android:layout_toRightOf="@+id/button23"
+        android:layout_toEndOf="@+id/button23"
+        android:onClick="clickSituacion"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Unidad Operativa de Control de Tránsito"
+            android:id="@+id/textView22"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="http://www.uoct.cl"
+            android:id="@+id/textView24"
+            android:textColor="#0525f9"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="47dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Preguntas Frecuentes"
+            android:id="@+id/textView27"
+            android:layout_above="@+id/button26"
+            android:layout_alignLeft="@+id/textView24"
+            android:layout_alignStart="@+id/textView24" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué es Preemergencia?"
+            android:id="@+id/button25"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#3344c6" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué es sello verde?"
+            android:id="@+id/button26"
+            android:layout_above="@+id/button25"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#3344c6" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Cuáles vehículos son afectados con restricción durante periodos de preemergencia?"
+            android:id="@+id/button27"
+            android:layout_below="@+id/button25"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#3344c6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="    página web de la UOCT"
+            android:id="@+id/textView23"
+            android:layout_above="@+id/textView24"
+            android:layout_alignRight="@+id/textView27"
+            android:layout_alignEnd="@+id/textView27" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Para más información, visite la"
+            android:id="@+id/textView"
+            android:layout_above="@+id/textView23"
+            android:layout_alignRight="@+id/textView22"
+            android:layout_alignEnd="@+id/textView22" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

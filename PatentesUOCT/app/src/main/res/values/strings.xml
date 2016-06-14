@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">PatentesUOCT</string>
-    <string name="action_settings">Configuración</string>
+    <string name="app_name">VistasApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_configuracion">Configuracion</string>
+    <string name="title_activity_patente">Patente</string>
+    <string name="title_activity_horario">Horario</string>
+    <string name="title_activity_faq">FAQ</string>
+    <string name="title_activity_situacion_ambiental">SituacionAmbiental</string>
 </resources>
