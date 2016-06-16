@@ -44,7 +44,7 @@
                 android:background="#00000000"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
-                android:clickable="true"
+                android:clickable="false"
                 android:onClick="clickHome" />
 
             <ImageButton
@@ -54,7 +54,8 @@
                 android:src="@mipmap/config"
                 android:background="#00000000"
                 android:layout_weight="0.8"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="clickConfig" />
 
             <ImageButton
                 android:layout_width="fill_parent"
@@ -63,7 +64,8 @@
                 android:src="@mipmap/faq"
                 android:background="#00000000"
                 android:layout_weight="1"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="clickFaq" />
 
             <ImageButton
                 android:layout_width="fill_parent"
@@ -72,7 +74,8 @@
                 android:src="@mipmap/sitamb"
                 android:background="#00000000"
                 android:layout_weight="0.9"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="clickSituacion" />
 
         </LinearLayout>
     </LinearLayout>
@@ -105,19 +108,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sin sello verde: X- X- X"
-                android:id="@+id/textView34"
+                android:id="@+id/textSinSello"
                 android:textSize="20dp"
                 android:textColor="#d40000"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Con sello verde: No aplica"
-                android:id="@+id/textView35"
+                android:id="@+id/textConSello"
                 android:textSize="20dp"
                 android:textColor="#00d400"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
     </LinearLayout>
@@ -132,10 +137,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Patentes Registradas:"
+            android:text="Patentes con restricción:"
             android:id="@+id/textView36"
             android:textIsSelectable="true"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal" />
 
         <TableLayout
             android:layout_width="wrap_content"

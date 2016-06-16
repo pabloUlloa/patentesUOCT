@@ -1,10 +1,13 @@
 package usach.uoct.patentesuoct.Tools;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author: Jefferson Morales De la Parra
@@ -16,40 +19,71 @@ public class JsonHandler {
      * Método que recibe un JSONArray en forma de String y devuelve un String[] con los nombres de actores
      */
 
-    private String URL="https://raw.githubusercontent.com/pabloUlloa/patentesUOCT/master/test.json";
-
-    public String[] getActors(String actors) {
+    public String getFechaHoy(String result) {
         try {
-            JSONArray ja = new JSONArray(actors);
-            String[] result = new String[ja.length()];
-            String actor;
-            for (int i = 0; i < ja.length(); i++) {
-                JSONObject row = ja.getJSONObject(i);
-                actor = " " + row.getString("firstName") + " " + row.getString("lastName");
-                result[i] = actor;
-            }
-            return result;
-        } catch (JSONException e) {
-            Log.e("ERROR", this.getClass().toString() + " " + e.toString() + "\n " + actors);
+            JSONObject jo = new JSONObject(result);
+            return jo.getJSONObject("restriccion").getJSONObject("hoy").getString("fecha");
+        } catch (JSONException e1) {
+            e1.printStackTrace();
         }
         return null;
-    }// getActors(String actors)
+    }// getRestruccionHoy(Context c)
 
-    /**
-     * Método que recibe un JSONObject en forma de String y devuelve un String con los datos de un actor
-     */
-    public String getActor(String actor) {
+    public String getSituacionHoy(String result) {
         try {
-            JSONObject row = new JSONObject(actor);
-            String id=row.getString("actorId");
-            String fn=row.getString("firstName");
-            String ln=row.getString("lastName");
-            String lu=row.getString("lastUpdate");
-            return "\n\n\n id:"+id+"\n Nombre: "+fn+"\n Apellido: "+ln+"\n LastUpdate: "+lu;
-        } catch (JSONException e) {
-            Log.e("ERROR", this.getClass().toString() + " " + e.toString());
+            JSONObject jo = new JSONObject(result);
+            return jo.getJSONObject("restriccion").getJSONObject("hoy").getString("tipo");
+        } catch (JSONException e1) {
+            e1.printStackTrace();
         }
         return null;
-    }// getActors(String actors)
+    }// getRestruccionHoy(Context c)
+
+    public String[] getRestriccionHoy(String result) {
+        try {
+            JSONObject jo = new JSONObject(result);
+            String[] res = new String[2];
+            res[0] = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_sin_sello");
+            res[1] = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_con_sello");
+            return res;
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        return null;
+    }// getRestruccionHoy(Context c)
+
+    public String getFechaManana(String result) {
+        try {
+            JSONObject jo = new JSONObject(result);
+            return jo.getJSONObject("restriccion").getJSONObject("manana").getString("fecha");
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        return null;
+    }// getRestruccionHoy(Context c)
+
+    public String getSituacionManana(String result) {
+        try {
+            JSONObject jo = new JSONObject(result);
+            return jo.getJSONObject("restriccion").getJSONObject("manana").getString("tipo");
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        return null;
+    }// getRestruccionHoy(Context c)
+
+    public String[] getRestriccionManana(String result) {
+        try {
+            JSONObject jo = new JSONObject(result);
+            String[] res = new String[2];
+            res[0] = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_sin_sello");
+            res[1] = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello");
+            return res;
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        return null;
+    }// getRestruccionHoy(Context c)
+
 
 }// JsonHandler
