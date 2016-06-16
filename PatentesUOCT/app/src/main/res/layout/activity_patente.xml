@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:weightSum="1">
 
     <LinearLayout
         android:orientation="vertical"
@@ -49,12 +50,11 @@
             <ImageButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton2"
-                android:src="@mipmap/config"
+                android:id="@+id/imageButton4"
+                android:src="@mipmap/sitamb"
                 android:background="#00000000"
-                android:layout_weight="0.8"
-                android:layout_gravity="center_horizontal"
-                android:onClick="clickConfig" />
+                android:layout_weight="0.9"
+                android:onClick="clickSituacion" />
 
             <ImageButton
                 android:layout_width="fill_parent"
@@ -63,18 +63,18 @@
                 android:src="@mipmap/faq"
                 android:background="#00000000"
                 android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
                 android:onClick="clickFaq" />
 
             <ImageButton
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton4"
-                android:src="@mipmap/sitamb"
+                android:id="@+id/imageButton2"
+                android:src="@mipmap/config"
                 android:background="#00000000"
-                android:layout_weight="0.9"
+                android:layout_weight="0.8"
                 android:layout_gravity="center_horizontal"
-                android:onClick="clickSituacion" />
+                android:onClick="clickConfig" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -82,7 +82,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:padding="15dp">
 
         <TextView
@@ -91,52 +90,22 @@
             android:text="Patentes"
             android:id="@+id/textView55"
             android:layout_gravity="center_horizontal"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-        <LinearLayout
+        <ListView
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_width="244dp"
+            android:layout_height="110dp"
             android:background="#00b9e1"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/listaPatentesAll"
+            android:layout_below="@+id/textView55"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alias 1 - Patente 1"
-                android:id="@+id/textView60"
-                android:textSize="20dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alias 2 - Patente 2"
-                android:id="@+id/textView61"
-                android:textSize="20dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alias 3 - Patente 3"
-                android:id="@+id/textView62"
-                android:textSize="20dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alias 4 - Patente 4"
-                android:id="@+id/textView63"
-                android:textSize="20dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-        </LinearLayout>
+        </ListView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -144,34 +113,54 @@
             android:text="Nueva Patente:"
             android:id="@+id/textView56"
             android:textSize="20dp"
-            android:layout_marginTop="10dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/patenteInput"
+            android:layout_centerHorizontal="true" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText3"
-            android:hint="AA - BB - 00" />
+            android:id="@+id/patenteInput"
+            android:hint="AA - BB - 00"
+            android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/selloCheck"
+            android:layout_alignRight="@+id/linearLayout"
+            android:layout_alignEnd="@+id/linearLayout"
+            android:capitalize="characters"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText4"
+            android:id="@+id/aliasInput"
             android:elegantTextHeight="true"
-            android:hint="Alias" />
+            android:hint="Alias"
+            android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/selloCheck"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sello verde"
-            android:id="@+id/checkBox2"
+            android:id="@+id/selloCheck"
             android:checked="false"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignLeft="@+id/textView56"
+            android:layout_alignStart="@+id/textView56" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:id="@+id/linearLayout"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
 
             <Button
                 android:layout_width="wrap_content"
@@ -181,18 +170,12 @@
                 android:background="@drawable/corners"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:layout_margin="5dp" />
+                android:layout_margin="5dp"
+                android:onClick="clickAgregar"
+                android:enabled="true" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Eliminar"
-                android:id="@+id/button45"
-                android:background="@drawable/corners"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:layout_margin="5dp" />
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

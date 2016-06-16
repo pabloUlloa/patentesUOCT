@@ -45,6 +45,12 @@ public class DBHelper extends SQLiteOpenHelper {
                     + HORARIO_COLUMN_ACTIVO + " BOOLEAN NOT NULL"
                     + ");";
 
+    public static final String JSON_TABLE_NAME = "json";
+    public static final String JSON_COLUMN_CONTENIDO= "contenido";
+    public static final String JSON_SQL_CREATE =
+            "CREATE TABLE "+ JSON_TABLE_NAME +" ("
+                    + JSON_COLUMN_CONTENIDO +" TEXT NOT NULL"
+                    + ");";
     /**
      * Constructor de clase.
      * @param context
@@ -63,6 +69,7 @@ public class DBHelper extends SQLiteOpenHelper {
     {
         db.execSQL(VEHICULOS_SQL_CREATE);
         db.execSQL(HORARIO_SQL_CREATE);
+        db.execSQL(JSON_SQL_CREATE);
     }
 
     /**
@@ -219,7 +226,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /*
-        --------------------------- orario ---------------------------
+        --------------------------- Horario ---------------------------
      */
 
     /**
@@ -315,4 +322,32 @@ public class DBHelper extends SQLiteOpenHelper {
         int numRows = (int) DatabaseUtils.queryNumEntries(db, HORARIO_TABLE_NAME);
         return numRows;
     }
+
+    /*
+        --------------------------- JSON ---------------------------
+     */
+
+    /**
+     * Inserta un JSON. Formato 0:00-23:59 hrs
+     * @param Json
+     * @return
+     */
+    public void insertJSON(String Json){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(JSON_COLUMN_CONTENIDO, Json);
+        db.insert(JSON_TABLE_NAME,null,contentValues);
+    }
+
+    /**
+     * Obtiene último Json respaldado,
+     * @return
+     */
+    public String getJson(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+JSON_TABLE_NAME,null);
+        res.moveToFirst();
+        return res.getString(res.getColumnIndex(JSON_COLUMN_CONTENIDO));
+    }
+
 }

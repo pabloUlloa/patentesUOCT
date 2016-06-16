@@ -7,15 +7,43 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.concurrent.ExecutionException;
 
 import usach.uoct.patentesuoct.R;
+import usach.uoct.patentesuoct.Tools.HttpGet;
+import usach.uoct.patentesuoct.Tools.JsonHandler;
 
 public class SituacionAmbiental extends AppCompatActivity {
+
+    private final String URL_GET = "http://www.uoct.cl/historial/ultimos-eventos/json/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_situacion_ambiental);
+
+        HttpGet c = new HttpGet(this);
+        c.execute(URL_GET);
+        String json=null;
+        try {
+            json=c.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        JsonHandler jh = new JsonHandler();
+        TextView t = new TextView(this);
+        String fecha = jh.getFecha(json);
+        String situacion = jh.getSituacion(json);
+
+        t=(TextView)findViewById(R.id.fecha);
+        t.setText(fecha);
+        t=(TextView)findViewById(R.id.textSituacion);
+        t.setText(situacion);
+
     }
 
     public void clickHome(View v){

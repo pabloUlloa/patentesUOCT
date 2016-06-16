@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import usach.uoct.patentesuoct.R;
 
@@ -16,6 +18,15 @@ public class Horario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horario);
+        Switch sw = (Switch)findViewById(R.id.horarioDefecto);
+        sw.setEnabled(false);
+        sw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(),"El horario por defecto no se puede desactivar ni modificar",Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
     }
 
     public void clickHome(View v){
