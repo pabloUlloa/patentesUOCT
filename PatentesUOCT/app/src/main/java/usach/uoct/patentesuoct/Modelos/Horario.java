@@ -24,6 +24,13 @@ public class Horario {
         return hora;
     }
 
+    public String getHoraMin(){
+        String out = "";
+        out=(this.hora<10)?out+"0"+this.hora:out+this.hora;
+        out=(this.minuto<10)?out+":0"+this.minuto:out+":"+this.minuto;
+        return out;
+    }
+
     public void setHora(int hora) {
         this.hora = hora;
     }

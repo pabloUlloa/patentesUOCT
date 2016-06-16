@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -70,6 +71,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(VEHICULOS_SQL_CREATE);
         db.execSQL(HORARIO_SQL_CREATE);
         db.execSQL(JSON_SQL_CREATE);
+    }
+
+    public void minimo(){
+        if(numberOfHorarios()==0){
+            insertHorario(22,0,true);
+            insertHorario(6,0,false);
+        }
     }
 
     /**
@@ -226,7 +234,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /*
-        --------------------------- Horario ---------------------------
+        --------------------------- VistaHorario ---------------------------
      */
 
     /**
@@ -251,6 +259,20 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public void insertHorario(Horario h){
         insertHorario(h.getHora(),h.getMinuto(),h.isActivo());
+    }
+
+    /**
+     * Actualiza un horario dado el id.
+     * @param id
+     * @return
+     */
+    public void updateHorario(int id,int hora, int min, boolean activo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.rawQuery("UPDATE "+HORARIO_TABLE_NAME+" SET "+HORARIO_COLUMN_HORA+
+                "="+hora+", "+HORARIO_COLUMN_MINUTO+"="+min+", "+HORARIO_COLUMN_ACTIVO+"="+activo+
+                " WHERE "+HORARIO_COLUMN_ID+"="+id,null);
+//        return db.update(HORARIO_TABLE_NAME, HORARIO_COLUMN_ID+" = ?",
+//                new String[]{Integer.toString(id)});
     }
 
     /**

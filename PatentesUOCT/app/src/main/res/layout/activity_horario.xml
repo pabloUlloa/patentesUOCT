@@ -93,36 +93,92 @@
             android:textSize="25dp"
             android:layout_marginBottom="10dp" />
 
-        <Switch
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Por defecto              "
-            android:switchPadding="50sp"
-            android:id="@+id/horarioDefecto"
-            android:checked="false" />
+            android:weightSum="1">
 
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Opcional 1 - hh/mm"
-            android:switchPadding="50sp"
-            android:id="@+id/horarioOpc1"
-            android:checked="false" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Por defecto              "
+                android:switchPadding="50sp"
+                android:id="@+id/horarioDefecto"
+                android:checked="false"
+                android:layout_weight="0.98" />
 
-        <Switch
+            <Button
+                android:layout_width="63dp"
+                android:layout_height="24dp"
+                android:text="Editar"
+                android:id="@+id/btnEditar0"
+                android:background="@drawable/corners"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opcional 2 - hh/mm"
-            android:switchPadding="50sp"
-            android:id="@+id/horarioOpc2"
-            android:layout_marginBottom="10dp"
-            android:checked="false" />
+            android:layout_gravity="right"
+            android:weightSum="1">
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opcional 1 - hh:mm"
+                android:switchPadding="50sp"
+                android:id="@+id/horarioOpc1"
+                android:checked="false"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="63dp"
+                android:layout_height="24dp"
+                android:text="Editar"
+                android:id="@+id/btnEditar1"
+                android:background="@drawable/corners"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:onClick="clickEditar1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:weightSum="1">
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opcional 2 - hh:mm"
+                android:switchPadding="50sp"
+                android:id="@+id/horarioOpc2"
+                android:layout_marginBottom="10dp"
+                android:checked="false"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="63dp"
+                android:layout_height="24dp"
+                android:text="Editar"
+                android:id="@+id/btnEditar2"
+                android:background="@drawable/corners"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:onClick="clickEditar2" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Opcional 2"
-            android:id="@+id/textView54"
+            android:id="@+id/textHorario"
             android:textSize="20dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal" />
@@ -130,7 +186,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="115dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:layout_marginBottom="10dp">
@@ -138,7 +194,7 @@
             <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/numberPicker"
+            android:id="@+id/hora"
                 android:orientation="vertical"
             android:layout_below="@+id/switch3"
                 android:layout_marginLeft="15dp"
@@ -155,7 +211,7 @@
             <NumberPicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/numberPicker"
+                android:id="@+id/min"
                 android:orientation="vertical"
                 android:layout_below="@+id/switch3"
                 android:layout_marginRight="15dp"
@@ -172,7 +228,8 @@
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp" />
+            android:paddingRight="20dp"
+            android:onClick="clickGuardar" />
 
     </LinearLayout>
 

@@ -1,34 +1,24 @@
 package usach.uoct.patentesuoct.Vistas;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import usach.uoct.patentesuoct.Modelos.Vehiculo;
 import usach.uoct.patentesuoct.R;
 import usach.uoct.patentesuoct.Tools.DBHelper;
 
-public class Patente extends AppCompatActivity {
+public class VistaPatente extends AppCompatActivity {
 
     DBHelper dbHelper = new DBHelper(this);
 
@@ -43,7 +33,7 @@ public class Patente extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 String patenteElegida = (String)parent.getItemAtPosition(position);
                 patenteElegida=patenteElegida.split(" - ")[1];
-                EliminarPatente elim = new EliminarPatente();
+                DialogEliminarPatente elim = new DialogEliminarPatente();
                 elim.setPatente(patenteElegida);
                 elim.show(getSupportFragmentManager(),"Eliminar Patente");
                 return false;
@@ -63,6 +53,9 @@ public class Patente extends AppCompatActivity {
     public void refreshList(){
         ArrayList<Vehiculo> vehiculos = dbHelper.getAllVehiculos();
         String[] patentes = new String[vehiculos.size()];
+        Button b = (Button)findViewById(R.id.btnAgregar);
+        b.setEnabled(vehiculos.size()!=10);
+
         for(int i=0;i<vehiculos.size();i++){
             if(vehiculos.get(i).getNombre().length()>0){
                 patentes[i]= vehiculos.get(i).getNombre() + " - " + vehiculos.get(i).getPatente();
@@ -81,17 +74,17 @@ public class Patente extends AppCompatActivity {
     }
 
     public void clickConfig(View v){
-        Intent intent = new Intent(this,Configuracion.class);
+        Intent intent = new Intent(this,VistaConfiguracion.class);
         startActivity(intent);
     }
 
     public void clickFaq(View v){
-        Intent intent = new Intent(this,FAQ.class);
+        Intent intent = new Intent(this,VistaFAQ.class);
         startActivity(intent);
     }
 
     public void clickSituacion(View v){
-        Intent intent = new Intent(this,SituacionAmbiental.class);
+        Intent intent = new Intent(this,VistaSituacionAmbiental.class);
         startActivity(intent);
     }
 

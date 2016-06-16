@@ -22,23 +22,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Vistas.Configuracion"
+            android:name=".Vistas.VistaConfiguracion"
             android:label="@string/title_activity_configuracion"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Vistas.Patente"
+            android:name=".Vistas.VistaPatente"
             android:label="@string/title_activity_patente"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Vistas.Horario"
+            android:name=".Vistas.VistaHorario"
             android:label="@string/title_activity_horario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Vistas.FAQ"
+            android:name=".Vistas.VistaFAQ"
             android:label="@string/title_activity_faq"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Vistas.SituacionAmbiental"
+            android:name=".Vistas.VistaSituacionAmbiental"
             android:label="@string/title_activity_situacion_ambiental"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

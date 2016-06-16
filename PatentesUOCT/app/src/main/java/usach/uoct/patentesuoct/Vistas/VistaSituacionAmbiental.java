@@ -2,10 +2,7 @@ package usach.uoct.patentesuoct.Vistas;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,7 +12,7 @@ import usach.uoct.patentesuoct.R;
 import usach.uoct.patentesuoct.Tools.HttpGet;
 import usach.uoct.patentesuoct.Tools.JsonHandler;
 
-public class SituacionAmbiental extends AppCompatActivity {
+public class VistaSituacionAmbiental extends AppCompatActivity {
 
     private final String URL_GET = "http://www.uoct.cl/historial/ultimos-eventos/json/";
 
@@ -52,17 +49,17 @@ public class SituacionAmbiental extends AppCompatActivity {
     }
 
     public void clickConfig(View v){
-        Intent intent = new Intent(this,Configuracion.class);
+        Intent intent = new Intent(this,VistaConfiguracion.class);
         startActivity(intent);
     }
 
     public void clickFaq(View v){
-        Intent intent = new Intent(this,FAQ.class);
+        Intent intent = new Intent(this,VistaFAQ.class);
         startActivity(intent);
     }
 
     public void clickSituacion(View v){
-        Intent intent = new Intent(this,SituacionAmbiental.class);
+        Intent intent = new Intent(this,VistaSituacionAmbiental.class);
         startActivity(intent);
     }
 

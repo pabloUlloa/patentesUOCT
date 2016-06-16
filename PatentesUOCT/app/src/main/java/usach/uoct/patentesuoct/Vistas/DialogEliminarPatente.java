@@ -13,7 +13,7 @@ import usach.uoct.patentesuoct.Tools.DBHelper;
 /**
  * Created by pablo on 16-06-16.
  */
-public class EliminarPatente extends DialogFragment {
+public class DialogEliminarPatente extends DialogFragment {
 
     private String patente;
     private DBHelper dbHelper;
