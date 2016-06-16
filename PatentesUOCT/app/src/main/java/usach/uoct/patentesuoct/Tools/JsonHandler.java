@@ -16,7 +16,7 @@ public class JsonHandler {
      * Método que recibe un JSONArray en forma de String y devuelve un String[] con los nombres de actores
      */
 
-
+    private String URL="https://raw.githubusercontent.com/pabloUlloa/patentesUOCT/master/test.json";
 
     public String[] getActors(String actors) {
         try {

@@ -219,7 +219,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /*
-        --------------------------- Horario ---------------------------
+        --------------------------- orario ---------------------------
      */
 
     /**
@@ -239,7 +239,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Inserta un horario, dado un elemento de la clase Horario.
+     * Inserta un horario, dado un elemento de la clase orario.
      * @param h
      */
     public void insertHorario(Horario h){

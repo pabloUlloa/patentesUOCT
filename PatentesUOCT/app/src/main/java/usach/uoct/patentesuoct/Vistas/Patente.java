@@ -17,37 +17,26 @@ public class Patente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patente);
-/*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     public void clickHome(View v){
-        Intent i = new Intent(this,Home.class);
-        startActivity(i);
+        Intent intent = new Intent(this,Home.class);
+        startActivity(intent);
     }
 
-    public void clickConfiguracion(View v){
-        Intent i = new Intent(this,Configuracion.class);
-        startActivity(i);
+    public void clickConfig(View v){
+        Intent intent = new Intent(this,Configuracion.class);
+        startActivity(intent);
     }
 
-    public void clickFAQ(View v){
-        Intent i = new Intent(this,FAQ.class);
-        startActivity(i);
+    public void clickFaq(View v){
+        Intent intent = new Intent(this,FAQ.class);
+        startActivity(intent);
     }
 
     public void clickSituacion(View v){
-        Intent i = new Intent(this,SituacionAmbiental.class);
-        startActivity(i);
+        Intent intent = new Intent(this,SituacionAmbiental.class);
+        startActivity(intent);
     }
 
 }

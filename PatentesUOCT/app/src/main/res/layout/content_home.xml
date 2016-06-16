@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="usach.uoct.patentesuoct.Vistas.Home"
+    tools:context="com.example.lenovo.vistasapp.Home"
     tools:showIn="@layout/activity_home"
     android:background="@mipmap/costanera">
 
@@ -22,8 +22,7 @@
         android:layout_marginTop="41dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="clickHome" />
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -33,8 +32,7 @@
         android:id="@+id/button8"
         android:layout_alignTop="@+id/button7"
         android:layout_toRightOf="@+id/button7"
-        android:layout_toEndOf="@+id/button7"
-        android:onClick="clickConfiguracion" />
+        android:layout_toEndOf="@+id/button7" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -44,8 +42,7 @@
         android:id="@+id/button9"
         android:layout_alignTop="@+id/button8"
         android:layout_toRightOf="@+id/button8"
-        android:layout_toEndOf="@+id/button8"
-        android:onClick="clickFAQ" />
+        android:layout_toEndOf="@+id/button8" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -55,8 +52,7 @@
         android:id="@+id/button10"
         android:layout_alignTop="@+id/button9"
         android:layout_toRightOf="@+id/button9"
-        android:layout_toEndOf="@+id/button9"
-        android:onClick="clickSituacion" />
+        android:layout_toEndOf="@+id/button9" />
 
     <TextView
         android:layout_width="wrap_content"

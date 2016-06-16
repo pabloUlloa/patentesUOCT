@@ -1,7 +1,433 @@
 {
-	"inicioRestriccion":"2012-04-21T18:25:43-05:00",
-	"finRestriccion":"2012-04-21T18:25:43-05:00",
-	"restriccion":[0,9,1,2],
-	"selloVerde":[3,4],
-	"situacion":"Preemergencia"
+    "eventos": [
+        {
+            "id": 38032,
+            "fecha": "2016-06-14 19:56:53",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4375545",
+                    "long": "-70.65048960000001"
+                },
+                "calle_uno": "",
+                "calle_dos": ""
+            },
+            "tipo": "Varios",
+            "comuna": "Región Metropolitana",
+            "url": "http://www.uoct.cl/eventos/mircoles-15-de-junio-rige-alerta-ambiental-se-refuerza-fiscalizacin-a-vehculos-sin-sello-verde-1-2-3-4-no-aplica-a-catalticos-prohibido-encender-estufas-a-le/",
+            "informacion": "Mi&eacute;rcoles 15 de junio rige Alerta Ambiental. Se refuerza fiscalizaci&oacute;n a veh&iacute;culos sin sello verde 1-2-3-4. No aplica a catal&iacute;ticos. Prohibido encender estufas a le&ntilde;a en toda RM"
+        },
+        {
+            "id": 38030,
+            "fecha": "2016-06-14 19:10:52",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.42597801677425",
+                    "long": "-70.5772453472992"
+                },
+                "calle_uno": "Americo Vespucio",
+                "calle_dos": ""
+            },
+            "tipo": "Congestión",
+            "comuna": "Las Condes-Ñuñoa",
+            "url": "http://www.uoct.cl/eventos/congestin-al-sur-por-amrico-vespucio-desde-francisco-de-aguirre-hasta-irarrzaval/",
+            "informacion": "Congesti&oacute;n al sur por Am&eacute;rico Vespucio, desde Isabel La Catolica - hasta Irarr&aacute;zaval",
+            "congestion": {
+                "desde": "Isabel La Catolica",
+                "hasta": "Irarrázaval"
+            },
+            "trazo": "a:6:{i:0;a:2:{i:0;d:-33.425818227599144;i:1;d:-70.57731349021196;}i:1;a:2:{i:0;d:-33.42773442314461;i:1;d:-70.57557541877031;}i:2;a:2:{i:0;d:-33.432247165154244;i:1;d:-70.57465273886919;}i:3;a:2:{i:0;d:-33.435506221791776;i:1;d:-70.57409483939409;}i:4;a:2:{i:0;d:-33.44820104997766;i:1;d:-70.57158429175615;}i:5;a:2:{i:0;d:-33.45380480475701;i:1;d:-70.5709620192647;}}"
+        },
+        {
+            "id": 38026,
+            "fecha": "2016-06-14 18:32:06",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.39132178977309",
+                    "long": "-70.57250528521115"
+                },
+                "calle_uno": "Manquehue",
+                "calle_dos": ""
+            },
+            "tipo": "Congestión",
+            "comuna": "Vitacura-Las Condes",
+            "url": "http://www.uoct.cl/eventos/congestin-al-sur-por-manquehue-desde-vitacura-hasta-colon-12/",
+            "informacion": "Congesti&oacute;n al sur por Manquehue, desde Vitacura - hasta Colon",
+            "congestion": {
+                "desde": "Vitacura",
+                "hasta": "Colon"
+            },
+            "trazo": "a:6:{i:0;a:2:{i:0;d:-33.39128364450457;i:1;d:-70.57254988700151;}i:1;a:2:{i:0;d:-33.39474130360405;i:1;d:-70.57209927588701;}i:2;a:2:{i:0;d:-33.398933306830365;i:1;d:-70.57100493460894;}i:3;a:2:{i:0;d:-33.40600909280784;i:1;d:-70.56847292929888;}i:4;a:2:{i:0;d:-33.41476793841467;i:1;d:-70.56540448218584;}i:5;a:2:{i:0;d:-33.41659482555009;i:1;d:-70.56486804038286;}}"
+        },
+        {
+            "id": 38025,
+            "fecha": "2016-06-14 18:30:58",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.429590820196594",
+                    "long": "-70.63785807774047"
+                },
+                "calle_uno": "Eje Purísima-irene Morales",
+                "calle_dos": ""
+            },
+            "tipo": "Congestión",
+            "comuna": "Recoleta-Santiago",
+            "url": "http://www.uoct.cl/eventos/congestin-al-sur-por-eje-pursima-irene-morales-desde-dominica-hasta-alameda/",
+            "informacion": "Congesti&oacute;n al sur por Eje Pur&iacute;sima-Irene Morales, desde Dominica - hasta Alameda",
+            "congestion": {
+                "desde": "Dominica",
+                "hasta": "Alameda"
+            },
+            "trazo": "a:7:{i:0;a:2:{i:0;d:-33.429650576390124;i:1;d:-70.63784558326006;}i:1;a:2:{i:0;d:-33.43285600920723;i:1;d:-70.63866097480059;}i:2;a:2:{i:0;d:-33.4347183292073;i:1;d:-70.63876826316118;}i:3;a:2:{i:0;d:-33.43667014092906;i:1;d:-70.63928324729204;}i:4;a:2:{i:0;d:-33.43682234458505;i:1;d:-70.63919523730874;}i:5;a:2:{i:0;d:-33.436849204026046;i:1;d:-70.63678661361337;}i:6;a:2:{i:0;d:-33.43747592195559;i:1;d:-70.63662995584309;}}"
+        },
+        {
+            "id": 38020,
+            "fecha": "2016-06-14 17:54:25",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.43154229830834",
+                    "long": "-70.6528915312744"
+                },
+                "calle_uno": "Santa Maria",
+                "calle_dos": ""
+            },
+            "tipo": "Congestión",
+            "comuna": "Independencia-Recoleta",
+            "url": "http://www.uoct.cl/eventos/congestin-al-oriente-por-santa-maria-desde-ruta-5-hasta-loreto-19/",
+            "informacion": "Congesti&oacute;n al oriente por Santa Maria, desde Ruta 5 - hasta Loreto",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38016,
+            "fecha": "2016-06-14 16:59:50",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4368312260366",
+                    "long": "-70.63395206032715"
+                },
+                "calle_uno": "Providencia",
+                "calle_dos": "Ramon Carnicer"
+            },
+            "tipo": "Desvío",
+            "comuna": "PROVIDENCIA",
+            "url": "http://www.uoct.cl/eventos/vehculos-particulares-que-viajan-por-alameda-providencia-al-oriente-estn-siendo-desviados-por-ramn-carnicer/",
+            "informacion": "Veh&iacute;culos particulares que viajan por Alameda-Providencia al oriente est&aacute;n siendo desviados por Ram&oacute;n Carnicer",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38015,
+            "fecha": "2016-06-14 16:19:23",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4288109917091",
+                    "long": "-70.62035490562016"
+                },
+                "calle_uno": "Providencia",
+                "calle_dos": "Manuel Montt"
+            },
+            "tipo": "Desvío",
+            "comuna": "PROVIDENCIA",
+            "url": "http://www.uoct.cl/eventos/vehculos-particulares-que-viajan-por-providencia-al-poniente-estn-siendo-desviados-por-manuel-montt-2/",
+            "informacion": "Veh&iacute;culos particulares que viajan por Providencia, al poniente, est&aacute;n siendo desviados por Manuel Montt",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38012,
+            "fecha": "2016-06-14 16:12:30",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.50657689475883",
+                    "long": "-70.58960934661866"
+                },
+                "calle_uno": "San Luis",
+                "calle_dos": "Americo Vespucio"
+            },
+            "tipo": "Semáforos",
+            "comuna": "PEÑALOLÉN",
+            "url": "http://www.uoct.cl/eventos/semforo-apagado-en-san-luis-americo-vespucio/",
+            "informacion": "Sem&aacute;foro apagado en San Luis / Americo Vespucio",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38011,
+            "fecha": "2016-06-14 14:57:10",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.36064991219656",
+                    "long": "-70.51583102380368"
+                },
+                "calle_uno": "Av. La Dehesa",
+                "calle_dos": "Comandante Malbec"
+            },
+            "tipo": "Semáforos",
+            "comuna": "Lo Barnechea",
+            "url": "http://www.uoct.cl/eventos/semforo-apagado-en-av-la-dehesa-comandante-malbec/",
+            "informacion": "Sem&aacute;foro apagado en Av. La Dehesa / Comandante Malbec",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38010,
+            "fecha": "2016-06-14 14:46:49",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4290100871314",
+                    "long": "-70.7307357765896"
+                },
+                "calle_uno": "Las Torres",
+                "calle_dos": "José Joaquín Pérez"
+            },
+            "tipo": "Semáforos",
+            "comuna": "Cerro Navia",
+            "url": "http://www.uoct.cl/eventos/semforo-apagado-en-las-torres-jos-joaqun-prez-3/",
+            "informacion": "Sem&aacute;foro apagado en Las Torres / Jos&eacute; Joaqu&iacute;n P&eacute;rez",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 38009,
+            "fecha": "2016-06-14 14:45:58",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4218791892639",
+                    "long": "-70.61415414147751"
+                },
+                "calle_uno": "Costanera Andrés Bello",
+                "calle_dos": "Pedro De Valdivia"
+            },
+            "tipo": "Semáforos",
+            "comuna": "Providencia",
+            "url": "http://www.uoct.cl/eventos/semforo-apagado-en-costanera-andrs-bello-pedro-de-valdivia/",
+            "informacion": "Sem&aacute;foro apagado en Costanera Andr&eacute;s Bello / Pedro de Valdivia",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.42972220746694;i:1;d:-70.66056925803423;}i:1;a:2:{i:0;d:-33.43222925791155;i:1;d:-70.65052706748247;}i:2;a:2:{i:0;d:-33.434109498219684;i:1;d:-70.64256627112627;}}"
+        },
+        {
+            "id": 37966,
+            "fecha": "2016-06-13 11:18:41",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.43389421785074",
+                    "long": "-70.62646269629522"
+                },
+                "calle_uno": "Av. Salvador",
+                "calle_dos": "Providencia"
+            },
+            "tipo": "Incidente",
+            "comuna": "Providencia",
+            "url": "http://www.uoct.cl/eventos/trnsito-bidireccional-en-calzada-sur-de-providencia-entre-salvador-y-seminario-por-reparacin-de-socavn-en-calzada-norte-solo-habilitado-para-transporte-pblico/",
+            "informacion": "Tr&aacute;nsito bidireccional en calzada sur de Providencia entre Salvador y Seminario, por reparaci&oacute;n de socav&oacute;n en calzada norte. Tramo solo habilitado para transporte p&uacute;blico.",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:5:{i:0;a:2:{i:0;d:-33.43622248156996;i:1;d:-70.63112933188677;}i:1;a:2:{i:0;d:-33.43547040864768;i:1;d:-70.62932688742876;}i:2;a:2:{i:0;d:-33.43505855642817;i:1;d:-70.62838274985552;}i:3;a:2:{i:0;d:-33.43453926171316;i:1;d:-70.62741715461016;}i:4;a:2:{i:0;d:-33.43375136034932;i:1;d:-70.62647301703691;}}"
+        },
+        {
+            "id": 37943,
+            "fecha": "2016-06-11 14:37:47",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4306367",
+                    "long": "-70.62795"
+                },
+                "calle_uno": "Del Arzobispo",
+                "calle_dos": "Bellavista"
+            },
+            "tipo": "Incidente",
+            "comuna": "Providencia",
+            "url": "http://www.uoct.cl/eventos/cerrado-el-acceso-a-del-arzobispo-al-sur-en-bellavista-por-desvos-asociados-a-reparacin-de-socavn/",
+            "informacion": "Cerrado el acceso a Del Arzobispo al sur en Bellavista, por desv&iacute;os asociados a reparaci&oacute;n de socav&oacute;n",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:5:{i:0;a:2:{i:0;d:-33.43622248156996;i:1;d:-70.63112933188677;}i:1;a:2:{i:0;d:-33.43547040864768;i:1;d:-70.62932688742876;}i:2;a:2:{i:0;d:-33.43505855642817;i:1;d:-70.62838274985552;}i:3;a:2:{i:0;d:-33.43453926171316;i:1;d:-70.62741715461016;}i:4;a:2:{i:0;d:-33.43375136034932;i:1;d:-70.62647301703691;}}"
+        },
+        {
+            "id": 33349,
+            "fecha": "2016-02-12 09:40:47",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.54248710130829",
+                    "long": "-70.78828207088623"
+                },
+                "calle_uno": "René Olivares",
+                "calle_dos": "Astro Rey"
+            },
+            "tipo": "Desvío",
+            "comuna": "Maipú",
+            "url": "http://www.uoct.cl/eventos/por-obras-de-repavimentacin-de-calzada-se-encuentra-cerrado-el-trnsito-de-ren-olivares-entre-astro-rey-y-cuatro-poniente/",
+            "informacion": "Por obras de repavimentaci&oacute;n de calzada, se encuentra cerrado el tr&aacute;nsito de Ren&eacute; Olivares entre Astro Rey y Cuatro Poniente",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:2:{i:0;a:2:{i:0;d:-33.54254766627139;i:1;d:-70.78831412529325;}i:1;a:2:{i:0;d:-33.539990152247896;i:1;d:-70.78479506706572;}}"
+        },
+        {
+            "id": 33092,
+            "fecha": "2016-02-02 09:17:15",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.41869189481416",
+                    "long": "-70.60274129178765"
+                },
+                "calle_uno": "Luis Thayer Ojeda",
+                "calle_dos": "Nueva Providencia"
+            },
+            "tipo": "Incidente",
+            "comuna": "Providencia",
+            "url": "http://www.uoct.cl/eventos/cerrado-el-trnsito-de-luis-thayer-ojeda-al-norte-altura-nueva-providencia/",
+            "informacion": "Cerrado el tr&aacute;nsito de Luis Thayer Ojeda, al norte, altura Nueva Providencia",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:2:{i:0;a:2:{i:0;d:-33.54254766627139;i:1;d:-70.78831412529325;}i:1;a:2:{i:0;d:-33.539990152247896;i:1;d:-70.78479506706572;}}"
+        },
+        {
+            "id": 23898,
+            "fecha": "2015-04-21 11:47:59",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.5729676",
+                    "long": "-70.70080459999997"
+                },
+                "calle_uno": "América",
+                "calle_dos": "Lo Blanco"
+            },
+            "tipo": "Desvío",
+            "comuna": "San Bernardo",
+            "url": "http://www.uoct.cl/eventos/esta-cerrado-el-cruce-de-america-ochagavia-con-lo-blanco-el-flujo-al-oriente-es-redireccionado-por-hospital-polpaico-y-al/",
+            "informacion": "Está cerrado el cruce de América (Ochagavía) con Lo Blanco. El flujo al oriente es redireccionado por Hospital-Polpaico, y al poniente por Rungue. Esto se debe a trabajos de EFE. ",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:2:{i:0;a:2:{i:0;d:-33.54254766627139;i:1;d:-70.78831412529325;}i:1;a:2:{i:0;d:-33.539990152247896;i:1;d:-70.78479506706572;}}"
+        },
+        {
+            "id": 18366,
+            "fecha": "2014-10-27 21:00:45",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.51412775643691",
+                    "long": "-70.60470343871458"
+                },
+                "calle_uno": "Vicuña Mackenna Oriente",
+                "calle_dos": ""
+            },
+            "tipo": "Varios",
+            "comuna": "LA FLORIDA",
+            "url": "http://www.uoct.cl/eventos/estan-en-desarrollo-las-obras-del-corredor-de-transporte-publico-vicuna-mackenna-oriente-tramo-1-entre-san-carlos-de-ancud/",
+            "informacion": "Están en desarrollo las obras del corredor de transporte público Vicuña Mackenna Oriente Tramo 1, entre San Carlos de Ancud y Departamental. Se sugieren las siguientes vías alternativas: Punta Arenas y eje Haydn-Las Industrias. La intervención de la caletera se realizará por tramos, de norte a sur. También hay faenas en la tercera y cuarta pista de Vicuña Mackenna en dirección al sur, a la altura de la calle Cabildo.",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:9:{i:0;a:2:{i:0;d:-33.51742586557176;i:1;d:-70.601453371346;}i:1;a:2:{i:0;d:-33.516406149755454;i:1;d:-70.60216147452593;}i:2;a:2:{i:0;d:-33.51576211252059;i:1;d:-70.60278374701738;}i:3;a:2:{i:0;d:-33.51474237709326;i:1;d:-70.60411412268877;}i:4;a:2:{i:0;d:-33.5128281044466;i:1;d:-70.60634572058916;}i:5;a:2:{i:0;d:-33.51245240110478;i:1;d:-70.60660321265459;}i:6;a:2:{i:0;d:-33.51195146077797;i:1;d:-70.60718256980181;}i:7;a:2:{i:0;d:-33.510108691047414;i:1;d:-70.60949999839067;}i:8;a:2:{i:0;d:-33.50926780249967;i:1;d:-70.6105299666524;}}"
+        },
+        {
+            "id": 14685,
+            "fecha": "2014-07-31 10:56:48",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.629635475309634",
+                    "long": "-70.6288556121338"
+                },
+                "calle_uno": "Santa Rosa",
+                "calle_dos": "San Pedro"
+            },
+            "tipo": "Varios",
+            "comuna": "La Pintana",
+            "url": "http://www.uoct.cl/eventos/por-trabajos-de-construccion-del-corredor-santa-rosa-se-realizan-trabajos-entre-acceso-sur-y-san-pedro-el-flujo-vehicular/",
+            "informacion": "Por trabajos de construcción del corredor Santa Rosa, se realizan trabajos entre Acceso Sur y San Pedro. El flujo vehicular está siendo desviado a las vías ya habilitadas.",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:9:{i:0;a:2:{i:0;d:-33.51742586557176;i:1;d:-70.601453371346;}i:1;a:2:{i:0;d:-33.516406149755454;i:1;d:-70.60216147452593;}i:2;a:2:{i:0;d:-33.51576211252059;i:1;d:-70.60278374701738;}i:3;a:2:{i:0;d:-33.51474237709326;i:1;d:-70.60411412268877;}i:4;a:2:{i:0;d:-33.5128281044466;i:1;d:-70.60634572058916;}i:5;a:2:{i:0;d:-33.51245240110478;i:1;d:-70.60660321265459;}i:6;a:2:{i:0;d:-33.51195146077797;i:1;d:-70.60718256980181;}i:7;a:2:{i:0;d:-33.510108691047414;i:1;d:-70.60949999839067;}i:8;a:2:{i:0;d:-33.50926780249967;i:1;d:-70.6105299666524;}}"
+        },
+        {
+            "id": 1778,
+            "fecha": "2013-10-16 16:13:06",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4386321422953",
+                    "long": "-70.65247125719372"
+                },
+                "calle_uno": "Bandera",
+                "calle_dos": "Compañia"
+            },
+            "tipo": "Desvío",
+            "comuna": "SANTIAGO",
+            "url": "http://www.uoct.cl/eventos/bandera-cerrado-entre-compania-y-santo-domingo-debido-a-las-obras-de-construccion-de-la-linea-3-del-metro-de-santiago-todas/",
+            "informacion": "Bandera cerrado entre Compañía y Santo Domingo.debido a las obras de construcción de la Línea 3 del Metro de Santiago.Todas las vías perpendiculares están habilitadas. ",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:3:{i:0;a:2:{i:0;d:-33.43862190874896;i:1;d:-70.65250838175416;}i:1;a:2:{i:0;d:-33.43752068734876;i:1;d:-70.65263712778687;}i:2;a:2:{i:0;d:-33.43636573281614;i:1;d:-70.65277660265565;}}"
+        },
+        {
+            "id": 1300,
+            "fecha": "2013-07-08 01:36:57",
+            "interseccion": {
+                "coordenadas": {
+                    "lat": "-33.4460703326597",
+                    "long": "-70.6512486512305"
+                },
+                "calle_uno": "San Diego",
+                "calle_dos": "Alonso Ovalle"
+            },
+            "tipo": "Desvío",
+            "comuna": "SANTIAGO",
+            "url": "http://www.uoct.cl/eventos/san-diego-bandera-cerrado-entre-alonso-ovalle-y-moneda-debido-a-las-obras-de-construccion-de-la-linea-3-del/",
+            "informacion": "San Diego - Bandera Cerrado entre Alonso Ovalle y Moneda.debido a las obras de construcción de la Línea 3 del Metro de Santiago.Todas las vías perpendiculares están habilitadas.",
+            "congestion": {
+                "desde": "Ruta 5",
+                "hasta": "Loreto"
+            },
+            "trazo": "a:4:{i:0;a:2:{i:0;d:-33.44635692369817;i:1;d:-70.65119946375489;}i:1;a:2:{i:0;d:-33.44477237611226;i:1;d:-70.65145695582032;}i:2;a:2:{i:0;d:-33.44325941948442;i:1;d:-70.65173590555787;}i:3;a:2:{i:0;d:-33.44206873092135;i:1;d:-70.651939753443;}}"
+        }
+    ],
+    "restriccion": {
+        "hoy": {
+            "fecha": "2016-6-14",
+            "tipo": "Restricción Vehicular",
+            "digitos_sin_sello": " 7-8-9-0",
+            "digitos_con_sello": ""
+        },
+        "manana": {
+            "fecha": "2016-6-15",
+            "tipo": "Alerta Ambiental",
+            "digitos_sin_sello": "1-2-3-4 ",
+            "digitos_con_sello": "No aplica"
+        }
+    }
 }
