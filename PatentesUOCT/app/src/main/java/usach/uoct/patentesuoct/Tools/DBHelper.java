@@ -268,9 +268,9 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public void updateHorario(int id,int hora, int min, boolean activo){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.rawQuery("UPDATE "+HORARIO_TABLE_NAME+" SET "+HORARIO_COLUMN_HORA+
-                "="+hora+", "+HORARIO_COLUMN_MINUTO+"="+min+", "+HORARIO_COLUMN_ACTIVO+"="+activo+
-                " WHERE "+HORARIO_COLUMN_ID+"="+id,null);
+        db.execSQL("UPDATE "+HORARIO_TABLE_NAME+" SET "+HORARIO_COLUMN_HORA+
+                "="+hora+", "+HORARIO_COLUMN_MINUTO+"="+min+", "+HORARIO_COLUMN_ACTIVO+"="+(activo?1:0)+
+                " WHERE "+HORARIO_COLUMN_ID+"="+id);
 //        return db.update(HORARIO_TABLE_NAME, HORARIO_COLUMN_ID+" = ?",
 //                new String[]{Integer.toString(id)});
     }

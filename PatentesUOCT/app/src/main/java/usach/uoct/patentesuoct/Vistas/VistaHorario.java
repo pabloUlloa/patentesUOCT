@@ -17,8 +17,8 @@ import usach.uoct.patentesuoct.Tools.DBHelper;
 
 public class VistaHorario extends AppCompatActivity {
 
-    DBHelper dbHelper;
-    int Hid;
+    private DBHelper dbHelper;
+    private int Hid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,10 @@ public class VistaHorario extends AppCompatActivity {
         Switch sw = (Switch)findViewById(R.id.horarioDefecto);
         Button b = (Button)findViewById(R.id.btnEditar0);
         b.setEnabled(false);
+        b = (Button)findViewById(R.id.btnEditar1);
+        b.setEnabled(true);
+        b = (Button)findViewById(R.id.btnEditar2);
+        b.setEnabled(true);
         sw.setEnabled(false);
         /* Horario opcional 1 */
         sw=(Switch)findViewById(R.id.horarioOpc1);
@@ -115,8 +119,17 @@ public class VistaHorario extends AppCompatActivity {
         int hora=np.getValue();
         np = (NumberPicker)findViewById(R.id.min);
         int min=np.getValue();
-        Switch sw=(Switch)findViewById(R.id.horarioOpc1);
-        dbHelper.updateHorario(Hid,hora,min,sw.isChecked());
+        boolean b;
+        Switch sw;
+        if(Hid==1) {
+            sw = (Switch) findViewById(R.id.horarioOpc1);
+            b = sw.isChecked();
+            dbHelper.updateHorario(Hid,hora,min,b);
+        }else if(Hid==2){
+            sw = (Switch) findViewById(R.id.horarioOpc2);
+            b = sw.isChecked();
+            dbHelper.updateHorario(Hid,hora,min,b);
+        }
         actualizar();
     }
 
