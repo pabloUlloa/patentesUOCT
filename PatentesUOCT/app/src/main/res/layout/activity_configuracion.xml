@@ -96,7 +96,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Patente"
+            android:text="Patentes"
             android:id="@+id/button42"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/corners"
@@ -107,7 +107,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Horario de notificación"
+            android:text="Horarios de notificación"
             android:id="@+id/button43"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/corners"

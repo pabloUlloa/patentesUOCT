@@ -28,8 +28,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String VEHICULOS_SQL_CREATE =
             "CREATE TABLE "+ VEHICULOS_TABLE_NAME +" ("
                     + VEHICULOS_COLUMN_ID +" INTEGER PRIMARY KEY, "
-                    + VEHICULOS_COLUMN_NOMBRE + " VARCHAR(255) NOT NULL, "
-                    + VEHICULOS_COLUMN_PATENTE + " VARCHAR(20) NOT NULL, "
+                    + VEHICULOS_COLUMN_NOMBRE + " VARCHAR(63) NOT NULL, "
+                    + VEHICULOS_COLUMN_PATENTE + " VARCHAR(7) NOT NULL, "
                     + VEHICULOS_COLUMN_SELLOVERDE + " INTEGER NOT NULL"
                     + ");";
 
@@ -75,7 +75,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void minimo(){
         if(numberOfHorarios()==0){
-            insertHorario(22,0,true);
+            insertHorario(22,0,false);
             insertHorario(6,0,false);
         }
     }
@@ -165,6 +165,43 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return array_list;
     }
+
+    /**
+     * Obtiene todos los vehiculos.
+     * @return lista de vehiculos.
+     */
+    public ArrayList<Vehiculo> getVehiculosCataliticos(){
+        ArrayList<Vehiculo> array_list = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT * FROM "+VEHICULOS_TABLE_NAME+" WHERE sello_verde=1", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(newVehiculo(res));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    /**
+     * Obtiene todos los vehiculos.
+     * @return lista de vehiculos.
+     */
+    public ArrayList<Vehiculo> getVehiculos(){
+        ArrayList<Vehiculo> array_list = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT * FROM "+VEHICULOS_TABLE_NAME+" WHERE sello_verde=0", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(newVehiculo(res));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
 
     /**
      * Cantidad de elementos de la tabla.

@@ -121,7 +121,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:id="@+id/patenteInput"
-            android:hint="AA - BB - 00"
+            android:hint="XX-BB-00"
             android:layout_gravity="center_horizontal"
             android:layout_above="@+id/selloCheck"
             android:layout_alignRight="@+id/linearLayout"

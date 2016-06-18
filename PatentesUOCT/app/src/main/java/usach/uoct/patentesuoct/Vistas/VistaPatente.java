@@ -1,7 +1,9 @@
 package usach.uoct.patentesuoct.Vistas;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,6 +23,7 @@ import usach.uoct.patentesuoct.Tools.DBHelper;
 public class VistaPatente extends AppCompatActivity {
 
     DBHelper dbHelper = new DBHelper(this);
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class VistaPatente extends AppCompatActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(200);
                 String patenteElegida = (String)parent.getItemAtPosition(position);
                 patenteElegida=patenteElegida.split(" - ")[1];
                 DialogEliminarPatente elim = new DialogEliminarPatente();
@@ -39,6 +44,10 @@ public class VistaPatente extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public Context getContext(){
+        return this;
     }
 
     /**
@@ -99,13 +108,16 @@ public class VistaPatente extends AppCompatActivity {
         String alias = ali.getText().toString();
         String patente = pai.getText().toString();
         patente=(patente.endsWith(" "))?patente.substring(0,patente.length()-2):patente;
+        patente=patente.toUpperCase().replace("-","");
         alias=(alias.endsWith(" "))?alias.substring(0,alias.length()-2):alias;
         boolean sello = ch.isChecked();
         if(checkPatente(patente)){
             dbHelper.insertVehiculo(alias,patente.toUpperCase(),sello);
             refreshList();
+            toast = Toast.makeText(this,"Patente agregada exitosamente",Toast.LENGTH_LONG);
+            toast.show();
         }else{
-            Toast toast = Toast.makeText(this,"Error\nPatente no válida",Toast.LENGTH_LONG);
+            toast = Toast.makeText(this,"Error\nPatente no válida",Toast.LENGTH_LONG);
             toast.show();
         }
     }
