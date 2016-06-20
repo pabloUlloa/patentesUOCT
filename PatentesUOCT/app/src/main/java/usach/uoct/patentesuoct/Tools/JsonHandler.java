@@ -39,7 +39,14 @@ public class JsonHandler {
     }// getRestruccionHoy(Context c)
 
     public static String getFecha(){
-        String fecha = new SimpleDateFormat("EEEE dd 'de' MMMM, yyyy").format(Calendar.getInstance().getTime());
+        String fecha;
+        Calendar c = Calendar.getInstance();
+        if(verHoy){
+            fecha = new SimpleDateFormat("EEEE dd 'de' MMMM, yyyy").format(c.getTime());
+        }else{
+            c.add(Calendar.DAY_OF_YEAR,1);
+            fecha = new SimpleDateFormat("EEEE dd 'de' MMMM, yyyy").format(c.getTime());
+        }
         return fecha.substring(0,1).toUpperCase()+fecha.substring(1);
     }
 

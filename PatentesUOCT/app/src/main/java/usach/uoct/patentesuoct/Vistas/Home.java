@@ -1,5 +1,7 @@
 package usach.uoct.patentesuoct.Vistas;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,6 +22,8 @@ import java.util.concurrent.ExecutionException;
 
 import usach.uoct.patentesuoct.Modelos.Vehiculo;
 import usach.uoct.patentesuoct.R;
+import usach.uoct.patentesuoct.Tools.AlarmReceiver;
+import usach.uoct.patentesuoct.Tools.AlarmSetter;
 import usach.uoct.patentesuoct.Tools.DBHelper;
 import usach.uoct.patentesuoct.Tools.HttpGet;
 import usach.uoct.patentesuoct.Tools.JsonHandler;
@@ -38,7 +42,8 @@ public class Home extends AppCompatActivity {
         String rSinSello = JsonHandler.getRestriccion(json);
         String rConSello = JsonHandler.getRestriccionConSello(json);
         String fecha = JsonHandler.getFecha();
-
+        AlarmSetter as = new AlarmSetter(this);
+        as.startAlarm();
         t=(TextView)findViewById(R.id.textSinSello);
         t.setText((CharSequence)rSinSello);
         t=(TextView)findViewById(R.id.textConSello);
@@ -47,7 +52,6 @@ public class Home extends AppCompatActivity {
         t.setText(fecha);
 
         TableLayout tabla = (TableLayout)findViewById(R.id.tablaRestricciones);
-        ArrayList<Vehiculo> patentes = dbHelper.getAllVehiculos();
         ArrayList<String> p = patentesSello(rConSello);
         for(String patente: p){
             TableRow tr = new TableRow(this);
@@ -56,7 +60,7 @@ public class Home extends AppCompatActivity {
             tv.setText(patente);
             tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
             tv.setTypeface(null, Typeface.BOLD);
-            tv.setTextColor(Color.WHITE);
+            tv.setTextColor(Color.GREEN);
             tv.setTextSize(18);
             tr.addView(tv);
             tabla.addView(tr);
@@ -69,7 +73,7 @@ public class Home extends AppCompatActivity {
             tv.setText(patente);
             tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
             tv.setTypeface(null, Typeface.BOLD);
-            tv.setTextColor(Color.WHITE);
+            tv.setTextColor(Color.RED);
             tv.setTextSize(18);
             tr.addView(tv);
             tabla.addView(tr);
