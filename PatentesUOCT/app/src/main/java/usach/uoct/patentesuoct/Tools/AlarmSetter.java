@@ -28,7 +28,6 @@ public class AlarmSetter extends AppCompatActivity {
 
     public void startAlarm(){
         DBHelper dbHelper = new DBHelper(context);
-        int dia=1000*60*60*24;
         Calendar calendar = Calendar.getInstance();
         Intent intent = new Intent(context,AlarmReceiver.class);
 
@@ -37,15 +36,19 @@ public class AlarmSetter extends AppCompatActivity {
         calendar.set(Calendar.MINUTE,30);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context,101,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),dia,pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
 
         // alarma opcional 1
-        if(dbHelper.getHorario(1).isActivo()){
+        /*if(dbHelper.getHorario(1).isActivo()){
             calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(1).getHora());
             calendar.set(Calendar.MINUTE,dbHelper.getHorario(1).getMinuto());
             pendingIntent = PendingIntent.getBroadcast(context,202,intent,PendingIntent.FLAG_UPDATE_CURRENT);
             alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),dia,pendingIntent);
+            if(calendar.getTimeInMillis() < System.currentTimeMillis()){
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
+            }else{
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+            }
         }
 
         // alarma opcional 1
@@ -54,8 +57,12 @@ public class AlarmSetter extends AppCompatActivity {
             calendar.set(Calendar.MINUTE,dbHelper.getHorario(2).getMinuto());
             pendingIntent = PendingIntent.getBroadcast(context,303,intent,PendingIntent.FLAG_UPDATE_CURRENT);
             alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),dia,pendingIntent);
-        }
+            if(calendar.getTimeInMillis() < System.currentTimeMillis()){
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
+            }else{
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+            }
+        }*/
 
     }
 

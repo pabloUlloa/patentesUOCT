@@ -48,10 +48,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final String JSON_TABLE_NAME = "json";
     public static final String JSON_COLUMN_CONTENIDO= "contenido";
+    public static final String JSON_COLUMN_ACTIVE= "activo";
     public static final String JSON_SQL_CREATE =
             "CREATE TABLE "+ JSON_TABLE_NAME +" ("
-                    + JSON_COLUMN_CONTENIDO +" TEXT NOT NULL"
-                    + ");";
+                    + JSON_COLUMN_CONTENIDO +" TEXT NOT NULL,"
+                    +JSON_COLUMN_ACTIVE+" BOOLEAN NOT NULL"+");";
     /**
      * Constructor de clase.
      * @param context
@@ -407,6 +408,19 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("SELECT * FROM "+JSON_TABLE_NAME,null);
         res.moveToFirst();
         return res.getString(res.getColumnIndex(JSON_COLUMN_CONTENIDO));
+    }
+
+    public void insertRestriccion(boolean value){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(JSON_COLUMN_ACTIVE,value);
+        db.insert(JSON_TABLE_NAME,null,contentValues);
+    }
+
+    public boolean getRestriccionActiva(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT",null);
+        return true;
     }
 
 }

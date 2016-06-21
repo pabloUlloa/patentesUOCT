@@ -24,6 +24,7 @@ import java.util.logging.LogRecord;
 
 import usach.uoct.patentesuoct.Modelos.Vehiculo;
 import usach.uoct.patentesuoct.R;
+import usach.uoct.patentesuoct.Tools.AlarmReScheduler;
 import usach.uoct.patentesuoct.Tools.AlarmReceiver;
 import usach.uoct.patentesuoct.Tools.AlarmSetter;
 import usach.uoct.patentesuoct.Tools.DBHelper;
@@ -46,6 +47,7 @@ public class Home extends AppCompatActivity {
         String fecha = JsonHandler.getFecha();
         AlarmSetter as = new AlarmSetter(this);
         as.startAlarm();
+        startUserAlarms();
         t=(TextView)findViewById(R.id.textSinSello);
         t.setText((CharSequence)rSinSello);
         t=(TextView)findViewById(R.id.textConSello);
@@ -153,6 +155,32 @@ public class Home extends AppCompatActivity {
     public void clickSituacion(View v){
         Intent intent = new Intent(this,VistaSituacionAmbiental.class);
         startActivity(intent);
+    }
+
+    public void startUserAlarms(){
+        Calendar calendar = Calendar.getInstance();
+        Intent intent1 = new Intent(this,AlarmReScheduler.class);
+        Intent intent2 = new Intent(this,AlarmReScheduler.class);
+
+        calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(1).getHora());
+        calendar.set(Calendar.MINUTE,dbHelper.getHorario(1).getMinuto());
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,202,intent1,PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        if(calendar.getTimeInMillis() < System.currentTimeMillis()){
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
+        }else{
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(2).getHora());
+        calendar.set(Calendar.MINUTE,dbHelper.getHorario(2).getMinuto());
+        PendingIntent pendingIntent2 = PendingIntent.getBroadcast(this,303,intent2,PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager2 = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        if(calendar.getTimeInMillis() < System.currentTimeMillis()){
+            alarmManager2.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
+        }else{
+            alarmManager2.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+        }
     }
 
 }

@@ -64,25 +64,25 @@ public class AlarmReceiver extends BroadcastReceiver {
                 notificacion  = "Restricción:\n";
                 for(String vehiculo : pSello)notificacion+=vehiculo+"\n";
                 for(String vehiculo : pSinSello)notificacion+=vehiculo+"\n";
+                dbHelper.insertRestriccion(true); //IMPLEMETAR ESTO
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                Intent repeating_intent = new Intent(context, Home.class);
+                repeating_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                PendingIntent pendingIntent = PendingIntent.getActivity(context, 102, repeating_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+                        .setContentIntent(pendingIntent)
+                        .setAutoCancel(true)
+                        .setContentTitle("Patentes UOCT")
+                        .setContentText(notificacion)
+                        .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
+                        .setSound(alarmSound)
+                        .setSmallIcon(R.mipmap.ic_launcher);
+                notificationManager.notify(101, builder.build());
+
             }else{
-                notificacion = "No tiene restricción";
+                dbHelper.insertRestriccion(false);
             }
-
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            Intent repeating_intent = new Intent(context, Home.class);
-            repeating_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 101, repeating_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true)
-                    .setContentTitle("Patentes UOCT")
-                    .setContentText(notificacion)
-                    .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
-                    .setSound(alarmSound)
-                    .setSmallIcon(R.mipmap.ic_launcher);
-            notificationManager.notify(101, builder.build());
-
 
         }
 
