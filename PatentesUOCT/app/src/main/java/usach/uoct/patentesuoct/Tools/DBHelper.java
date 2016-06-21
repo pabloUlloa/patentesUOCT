@@ -394,6 +394,9 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public void insertJSON(String Json){
         SQLiteDatabase db = this.getWritableDatabase();
+        if(getJson().length()>10){
+            db.delete(JSON_TABLE_NAME,JSON_COLUMN_ACTIVE+" = 1 OR " + JSON_COLUMN_ACTIVE + " = 0",null);
+        }
         ContentValues contentValues = new ContentValues();
         contentValues.put(JSON_COLUMN_CONTENIDO, Json);
         db.insert(JSON_TABLE_NAME,null,contentValues);
@@ -413,14 +416,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public void insertRestriccion(boolean value){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(JSON_COLUMN_ACTIVE,value);
+        contentValues.put(JSON_COLUMN_ACTIVE,value?1:0);
         db.insert(JSON_TABLE_NAME,null,contentValues);
     }
 
     public boolean getRestriccionActiva(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("SELECT",null);
-        return true;
+        Cursor res = db.rawQuery("SELECT "+JSON_COLUMN_ACTIVE+" FROM "+JSON_TABLE_NAME,null);
+        res.moveToFirst();
+        return res.getInt(0)!=0;
     }
 
 }
