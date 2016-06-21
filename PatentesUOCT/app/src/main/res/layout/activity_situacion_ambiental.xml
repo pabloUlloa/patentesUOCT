@@ -37,10 +37,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton"
-                android:text="Inicio"
+                android:text="@string/home_btn"
                 android:drawableTop="@mipmap/home"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickHome" />
 
             <Button
@@ -48,9 +49,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton4"
                 android:drawableTop="@mipmap/sitamb"
-                android:text="Situación Ambiental"
+                android:text="@string/sit_btn"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickSituacion" />
 
             <Button
@@ -58,8 +60,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton3"
                 android:drawableTop="@mipmap/faq"
-                android:text="Preguntas Frecuentes"
+                android:text="@string/faq_btn"
                 android:layout_weight="1"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickFaq" />
 
             <Button
@@ -67,13 +70,20 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton2"
                 android:drawableTop="@mipmap/config"
-                android:text="Configurar"
+                android:text="@string/conf_btn"
                 android:layout_weight="1"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickConfig" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/fondo">
+
+        <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -84,7 +94,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:padding="15dp"
-            android:background="#616161">
+            android:background="#a7a7a7">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,7 +128,7 @@
         android:text="Ejes Ambientales"
         android:id="@+id/textView59"
         android:layout_gravity="center_horizontal"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:layout_marginBottom="10dp"
         android:textColor="#616161"
         android:layout_marginTop="10dp" />
@@ -223,5 +233,5 @@
                 android:layout_weight="1" />
         </TableRow>
     </TableLayout>
-
+</LinearLayout>
 </LinearLayout>

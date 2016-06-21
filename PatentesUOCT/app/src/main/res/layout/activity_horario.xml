@@ -37,10 +37,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton"
-                android:text="Inicio"
+                android:text="@string/home_btn"
                 android:drawableTop="@mipmap/home"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickHome" />
 
             <Button
@@ -48,9 +49,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton4"
                 android:drawableTop="@mipmap/sitamb"
-                android:text="Situación Ambiental"
+                android:text="@string/sit_btn"
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickSituacion" />
 
             <Button
@@ -58,8 +60,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton3"
                 android:drawableTop="@mipmap/faq"
-                android:text="Preguntas Frecuentes"
+                android:text="@string/faq_btn"
                 android:layout_weight="1"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickFaq" />
 
             <Button
@@ -67,8 +70,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/imageButton2"
                 android:drawableTop="@mipmap/config"
-                android:text="Configurar"
+                android:text="@string/conf_btn"
                 android:layout_weight="1"
+                android:textSize="@dimen/nav_btn_text"
                 android:onClick="clickConfig" />
         </LinearLayout>
     </LinearLayout>
@@ -78,7 +82,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="@mipmap/fondo">
 
         <TextView
             android:layout_width="wrap_content"
@@ -110,7 +115,7 @@
                 android:text="Editar"
                 android:id="@+id/btnEditar0"
                 android:background="@drawable/corners"
-                android:textColor="#ffffff"
+                android:textColor="@android:color/darker_gray"
                 android:textStyle="bold"
                 android:enabled="false" />
         </LinearLayout>
@@ -174,7 +179,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opcional 2"
             android:id="@+id/textHorario"
             android:textSize="20dp"
             android:layout_marginBottom="10dp"

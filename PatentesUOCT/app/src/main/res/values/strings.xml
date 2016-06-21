@@ -7,7 +7,8 @@
     <string name="title_activity_faq">FAQ</string>
     <string name="title_activity_situacion_ambiental">SituacionAmbiental</string>
     <string name="title_activity_main">Restriccion UOCT</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_btn">Inicio</string>
+    <string name="faq_btn">Preguntas</string>
+    <string name="sit_btn">Calidad Aire</string>
+    <string name="conf_btn">Configurar</string>
 </resources>
