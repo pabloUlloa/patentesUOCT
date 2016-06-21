@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -31,18 +32,26 @@ public class HttpGet extends AsyncTask<String, Void, String> {
      */
     @Override
     protected String doInBackground(String... urls) {
+        String def = "{\"restriccion\":{"+
+                "\"hoy\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"},"+
+                "\"manana\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"}}}";
         try {
             URL url = new URL(urls[0]);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
-            connection.setConnectTimeout(3000);
+//            connection.setConnectTimeout(3000);
             connection.connect();
             int response = connection.getResponseCode();
             Log.d("Deb: ","The response is: " + response);
             InputStream is = connection.getInputStream();
             // Convert the InputStream into a string
-            return new Scanner(connection.getInputStream(), "UTF-8").useDelimiter("\\A").next();
+            try{
+                String ret = new Scanner(connection.getInputStream(), "UTF-8").useDelimiter("\\A").next();
+                return ret;
+            }catch (NoSuchElementException e){
+                return def;
+            }
             // Log.d("Deb",responseStr);
         } catch (MalformedURLException e) {
             Log.e("ERROR1", this.getClass().toString() + " " + e.toString());
@@ -50,12 +59,8 @@ public class HttpGet extends AsyncTask<String, Void, String> {
             Log.e("ERROR2", this.getClass().toString() + " " + e.toString());
         } catch (IOException e) {
             Log.e("ERROR3", this.getClass().toString() + " " + e.toString() + " " + urls[0]);
-            return "{\"restriccion\":{"+
-                    "\"hoy\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"},"+
-                    "\"manana\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"}}}";
         }
-        return null;
-    }// doInBackground(String... urls)
+        return def;    }// doInBackground(String... urls)
 
     /**
      * Método que manipula la respuesta del servidor

@@ -55,12 +55,20 @@ public class JsonHandler {
         try {
             JSONObject jo = new JSONObject(result);
             if(verHoy) {
-                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_con_sello").replaceAll(" ","").replace("-","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_con_sello");
+                if(aux.length()<1){
+                    return aux;
+                }
+                aux=aux.replace(" ","").replace("-","");
                 for(int i=0;i<aux.length();i++){
                     res+="-"+aux.charAt(i);
                 }
             }else{
-                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello").replaceAll(" ","").replace("-","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello");
+                if(aux.length()<1){
+                    return aux;
+                }
+                aux=aux.replace(" ","").replace("-","");
                 for(int i=0;i<aux.length();i++){
                     res+="-"+aux.charAt(i);
                 }
@@ -76,12 +84,20 @@ public class JsonHandler {
         try {
             JSONObject jo = new JSONObject(result);
             if(verHoy) {
-                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_sin_sello").replaceAll(" ","").replace("-","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_sin_sello");
+                if(aux.equals("Sin Conexión")){
+                    return aux;
+                }
+                aux=aux.replaceAll(" ","").replace("-","");
                 for(int i=0;i<aux.length();i++){
                     res+="-"+aux.charAt(i);
                 }
             }else{
-                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_sin_sello").replaceAll(" ","").replace("-","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_sin_sello");
+                if(aux.equals("Sin Conexión")){
+                    return aux;
+                }
+                aux=aux.replaceAll(" ","").replace("-","");
                 for(int i=0;i<aux.length();i++){
                     res+="-"+aux.charAt(i);
                 }
