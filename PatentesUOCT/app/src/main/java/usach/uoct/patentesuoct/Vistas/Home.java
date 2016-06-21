@@ -19,6 +19,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 import usach.uoct.patentesuoct.Modelos.Vehiculo;
 import usach.uoct.patentesuoct.R;
@@ -88,6 +90,7 @@ public class Home extends AppCompatActivity {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if(networkInfo!=null && networkInfo.isConnected()) {
             try {
+
                 json = c.get();
             } catch (InterruptedException e) {
                 e.printStackTrace();

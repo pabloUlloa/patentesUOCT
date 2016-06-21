@@ -36,6 +36,7 @@ public class HttpGet extends AsyncTask<String, Void, String> {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setDoInput(true);
+            connection.setConnectTimeout(3000);
             connection.connect();
             int response = connection.getResponseCode();
             Log.d("Deb: ","The response is: " + response);
@@ -49,6 +50,9 @@ public class HttpGet extends AsyncTask<String, Void, String> {
             Log.e("ERROR2", this.getClass().toString() + " " + e.toString());
         } catch (IOException e) {
             Log.e("ERROR3", this.getClass().toString() + " " + e.toString() + " " + urls[0]);
+            return "{\"restriccion\":{"+
+                    "\"hoy\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"},"+
+                    "\"manana\":{\"fecha\":\"-\",\"tipo\":\"Sin Conexión\",\"digitos_sin_sello\":\"Sin Conexión\",\"digitos_con_sello\":\"\"}}}";
         }
         return null;
     }// doInBackground(String... urls)

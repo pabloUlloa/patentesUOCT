@@ -51,31 +51,45 @@ public class JsonHandler {
     }
 
     public static String getRestriccionConSello(String result){
+        String res = "";
         try {
             JSONObject jo = new JSONObject(result);
             if(verHoy) {
-                return jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_con_sello").replaceAll(" ","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_con_sello").replaceAll(" ","").replace("-","");
+                for(int i=0;i<aux.length();i++){
+                    res+="-"+aux.charAt(i);
+                }
             }else{
-                return jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello").replaceAll(" ","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello").replaceAll(" ","").replace("-","");
+                for(int i=0;i<aux.length();i++){
+                    res+="-"+aux.charAt(i);
+                }
             }
         } catch (JSONException e1){
             e1.printStackTrace();
         }
-        return null;
+        return res.substring(1);
     }
 
     public static String getRestriccion(String result) {
+        String res = "";
         try {
             JSONObject jo = new JSONObject(result);
             if(verHoy) {
-                return jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_sin_sello").replaceAll(" ","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("hoy").getString("digitos_sin_sello").replaceAll(" ","").replace("-","");
+                for(int i=0;i<aux.length();i++){
+                    res+="-"+aux.charAt(i);
+                }
             }else{
-                return jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_sin_sello").replaceAll(" ","");
+                String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_sin_sello").replaceAll(" ","").replace("-","");
+                for(int i=0;i<aux.length();i++){
+                    res+="-"+aux.charAt(i);
+                }
             }
         } catch (JSONException e1) {
             e1.printStackTrace();
         }
-        return null;
+        return res.substring(1);
     }// getRestruccionHoy(Context c)
 
 

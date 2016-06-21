@@ -105,7 +105,8 @@
             android:id="@+id/button39"
             android:layout_gravity="center_horizontal"
             android:background="#ededed"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:onClick="clickSello"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -114,7 +115,8 @@
             android:id="@+id/button40"
             android:layout_gravity="center_horizontal"
             android:background="#ededed"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:onClick="clickPre"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -123,7 +125,8 @@
             android:id="@+id/button41"
             android:layout_gravity="center_horizontal"
             android:background="#ededed"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:onClick="clickRest"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -139,32 +142,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Para más información, visite la"
+                android:text="Para más información, visite:\nhttp://www.uoct.cl"
                 android:id="@+id/textView49"
                 android:layout_gravity="center_horizontal"
-                android:textSize="20dp"
+                android:textSize="16sp"
                 android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="página web de la UOCT"
-                android:id="@+id/textView50"
-                android:layout_gravity="center_horizontal"
-                android:textSize="20dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="http://www.uoct.cl"
-                android:id="@+id/textView51"
-                android:layout_gravity="center_horizontal"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:onClick="clickEnlace"/>
         </LinearLayout>
 
     </LinearLayout>
