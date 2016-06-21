@@ -36,8 +36,11 @@ public class AlarmSetter extends AppCompatActivity {
         calendar.set(Calendar.MINUTE,30);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context,101,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-
+        if(calendar.getTimeInMillis() < System.currentTimeMillis()){
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
+        }else{
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+        }
         // alarma opcional 1
         /*if(dbHelper.getHorario(1).isActivo()){
             calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(1).getHora());
