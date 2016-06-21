@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import usach.uoct.patentesuoct.Modelos.Horario;
@@ -75,7 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public void minimo(){
-        if(numberOfHorarios()==0){
+        if(numberOfHorarios()<1){
             insertHorario(22,0,false);
             insertHorario(6,0,false);
         }
@@ -379,8 +382,9 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public int numberOfHorarios() {
         SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, HORARIO_TABLE_NAME);
-        return numRows;
+        Cursor res = db.rawQuery("SELECT COUNT(*) FROM "+HORARIO_TABLE_NAME,null);
+        res.moveToFirst();
+        return res.getInt(0);
     }
 
     /*
@@ -394,12 +398,19 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     public void insertJSON(String Json){
         SQLiteDatabase db = this.getWritableDatabase();
-        if(getJson().length()>10){
+        if(hayJson()){
             db.delete(JSON_TABLE_NAME,JSON_COLUMN_ACTIVE+" = 1 OR " + JSON_COLUMN_ACTIVE + " = 0",null);
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put(JSON_COLUMN_CONTENIDO, Json);
-        db.insert(JSON_TABLE_NAME,null,contentValues);
+        try {
+            JSONObject jo = new JSONObject(Json);
+            jo.getJSONObject("restriccion");
+            contentValues.put(JSON_COLUMN_CONTENIDO,jo.toString());
+            contentValues.put(JSON_COLUMN_ACTIVE,0);
+            db.insert(JSON_TABLE_NAME,null,contentValues);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -410,14 +421,20 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+JSON_TABLE_NAME,null);
         res.moveToFirst();
-        return res.getString(res.getColumnIndex(JSON_COLUMN_CONTENIDO));
+        return res.getString(0);
+    }
+
+    public boolean hayJson(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT COUNT(*) FROM "+JSON_TABLE_NAME,null);
+        res.moveToFirst();
+        return res.getInt(0)!=0;
     }
 
     public void insertRestriccion(boolean value){
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(JSON_COLUMN_ACTIVE,value?1:0);
-        db.insert(JSON_TABLE_NAME,null,contentValues);
+        int valor = value?1:0;
+        db.execSQL("UPDATE "+JSON_TABLE_NAME+" SET "+JSON_COLUMN_ACTIVE+" = "+valor+" WHERE "+JSON_COLUMN_ACTIVE+" = "+(value?0:1));
     }
 
     public boolean getRestriccionActiva(){

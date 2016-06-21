@@ -48,6 +48,8 @@ public class HttpGet extends AsyncTask<String, Void, String> {
             // Convert the InputStream into a string
             try{
                 String ret = new Scanner(connection.getInputStream(), "UTF-8").useDelimiter("\\A").next();
+                DBHelper dbHelper = new DBHelper(context);
+                dbHelper.insertJSON(ret);
                 return ret;
             }catch (NoSuchElementException e){
                 return def;

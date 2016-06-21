@@ -34,11 +34,13 @@ import usach.uoct.patentesuoct.Tools.JsonHandler;
 public class Home extends AppCompatActivity {
 
     JsonHandler jh = new JsonHandler();
-    DBHelper dbHelper = new DBHelper(this);
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dbHelper = new DBHelper(this);
+        dbHelper.minimo();
         setContentView(R.layout.activity_home);
         TextView t;
         String json = jsonContent();
@@ -47,7 +49,7 @@ public class Home extends AppCompatActivity {
         String fecha = JsonHandler.getFecha();
         AlarmSetter as = new AlarmSetter(this);
         as.startAlarm();
-        startUserAlarms();
+        as.startUserAlarms();
         t=(TextView)findViewById(R.id.textSinSello);
         t.setText((CharSequence)rSinSello);
         t=(TextView)findViewById(R.id.textConSello);
@@ -69,8 +71,9 @@ public class Home extends AppCompatActivity {
             tr.addView(tv);
             tabla.addView(tr);
         }
-        p = patentesSinSello(rSinSello);
-        for(String patente: p){
+        ArrayList<String> q = patentesSinSello(rSinSello);
+        dbHelper.insertRestriccion(p.size()>0 || q.size()>0);
+        for(String patente: q){
             TableRow tr = new TableRow(this);
             tr.setLayoutParams(new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
             TextView tv = new TextView(this);
@@ -157,30 +160,6 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void startUserAlarms(){
-        Calendar calendar = Calendar.getInstance();
-        Intent intent1 = new Intent(this,AlarmReScheduler.class);
-        Intent intent2 = new Intent(this,AlarmReScheduler.class);
 
-        calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(1).getHora());
-        calendar.set(Calendar.MINUTE,dbHelper.getHorario(1).getMinuto());
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,202,intent1,PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        if(calendar.getTimeInMillis() < System.currentTimeMillis()){
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
-        }else{
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-        }
-
-        calendar.set(Calendar.HOUR_OF_DAY,dbHelper.getHorario(2).getHora());
-        calendar.set(Calendar.MINUTE,dbHelper.getHorario(2).getMinuto());
-        PendingIntent pendingIntent2 = PendingIntent.getBroadcast(this,303,intent2,PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager2 = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        if(calendar.getTimeInMillis() < System.currentTimeMillis()){
-            alarmManager2.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis()+AlarmManager.INTERVAL_DAY,AlarmManager.INTERVAL_DAY,pendingIntent);
-        }else{
-            alarmManager2.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-        }
-    }
 
 }

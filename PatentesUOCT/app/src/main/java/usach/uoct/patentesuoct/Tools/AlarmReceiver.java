@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -28,7 +29,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         dbHelper = new DBHelper(context);
-
+        Log.i("nuevo JSON","entré");
         if(Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
 
             AlarmSetter as = new AlarmSetter(context);
