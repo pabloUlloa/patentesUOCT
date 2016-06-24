@@ -76,7 +76,7 @@ public class JsonHandler {
         } catch (JSONException e1){
             e1.printStackTrace();
         }
-        return res.substring(1);
+        return res.substring(0);
     }
 
     public static String getRestriccion(String result) {
@@ -105,7 +105,7 @@ public class JsonHandler {
         } catch (JSONException e1) {
             e1.printStackTrace();
         }
-        return res.substring(1);
+        return res.substring(0);
     }// getRestruccionHoy(Context c)
 
 
