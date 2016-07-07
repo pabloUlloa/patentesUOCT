@@ -114,7 +114,7 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:background="@drawable/greycorners2">
+            android:background="@drawable/greycorners3">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
                 android:text="Nueva Patente:"
                 android:id="@+id/textView56"
                 android:textSize="20dp"
-                android:textColor="#eeeeee"
+                android:textColor="#000000"
                 android:layout_gravity="center_horizontal"
                 android:layout_above="@+id/patenteInput"
                 android:layout_centerHorizontal="true" />
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/patenteInput"
                 android:hint="XX-BB-00"
-                android:textColor="#eeeeee"
+                android:textColor="#000000"
                 android:layout_gravity="center_horizontal"
                 android:layout_above="@+id/selloCheck"
                 android:layout_alignRight="@+id/linearLayout"
@@ -146,7 +146,7 @@
                 android:id="@+id/aliasInput"
                 android:elegantTextHeight="true"
                 android:hint="Alias"
-                android:textColor="#eeeeee"
+                android:textColor="#000000"
                 android:layout_gravity="center_horizontal"
                 android:layout_above="@+id/selloCheck"
                 android:layout_alignParentLeft="true"
@@ -159,7 +159,7 @@
                 android:id="@+id/selloCheck"
                 android:checked="false"
                 android:textSize="15dp"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:layout_gravity="center_horizontal"
                 android:layout_above="@+id/linearLayout"
                 android:layout_alignLeft="@+id/textView56"

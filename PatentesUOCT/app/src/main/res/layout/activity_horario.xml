@@ -94,7 +94,7 @@
             android:textSize="25dp"
             android:layout_marginBottom="10dp" />
 
-        <LinearLayout
+        <!--LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                 android:textColor="@android:color/darker_gray"
                 android:textStyle="bold"
                 android:enabled="false" />
-        </LinearLayout>
+        </LinearLayout-->
 
         <LinearLayout
             android:orientation="horizontal"

@@ -43,18 +43,18 @@ public class VistaHorario extends AppCompatActivity {
     private void actualizar(){
         /* Horario por defecto */
         as = new AlarmSetter(this);
-        Switch sw = (Switch)findViewById(R.id.horarioDefecto);
-        Button b = (Button)findViewById(R.id.btnEditar0);
-        b.setEnabled(false);
+        Switch sw;// = (Switch)findViewById(R.id.horarioDefecto);
+        Button b;// = (Button)findViewById(R.id.btnEditar0);
+        //b.setEnabled(false);
         b = (Button)findViewById(R.id.btnEditar1);
         b.setEnabled(true);
         b = (Button)findViewById(R.id.btnEditar2);
         b.setEnabled(true);
-        sw.setEnabled(false);
+        //sw.setEnabled(false);
         /* Horario opcional 1 */
         Switch sw2=(Switch)findViewById(R.id.horarioOpc1);
         Horario horOpc1 = dbHelper.getHorario(1);
-        sw2.setText("Opcional 1 - "+horOpc1.getHoraMin());
+        sw2.setText("Recordatorio 1 - "+horOpc1.getHoraMin());
         sw2.setEnabled(true);
         sw2.setChecked(horOpc1.isActivo());
         sw2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -74,7 +74,7 @@ public class VistaHorario extends AppCompatActivity {
         /* Horario opcional 2 */
         Switch sw3=(Switch)findViewById(R.id.horarioOpc2);
         Horario horOpc2 = dbHelper.getHorario(2);
-        sw3.setText("Opcional 2 - "+horOpc2.getHoraMin());
+        sw3.setText("Recordatorio 2 - "+horOpc2.getHoraMin());
         sw3.setEnabled(true);
         sw3.setChecked(horOpc2.isActivo());
         sw3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
