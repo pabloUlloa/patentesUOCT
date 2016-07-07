@@ -1,6 +1,7 @@
 package usach.uoct.patentesuoct.Vistas;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -116,7 +117,8 @@ public class VistaHorario extends AppCompatActivity {
 
     public void clickEditar1(View v){
         TextView tv = (TextView)findViewById(R.id.textHorario);
-        tv.setText("Opcional 1");
+        tv.setText("Recordatorio 1");
+        tv.setTextColor(Color.WHITE);
         NumberPicker np = (NumberPicker)findViewById(R.id.hora);
         np.setValue(dbHelper.getHorario(1).getHora());
         np = (NumberPicker)findViewById(R.id.min);
@@ -126,7 +128,8 @@ public class VistaHorario extends AppCompatActivity {
 
     public void clickEditar2(View v){
         TextView tv = (TextView)findViewById(R.id.textHorario);
-        tv.setText("Opcional 2");
+        tv.setText("Recodatorio 2");
+        tv.setTextColor(Color.WHITE);
         NumberPicker np = (NumberPicker)findViewById(R.id.hora);
         np.setValue(dbHelper.getHorario(2).getHora());
         np = (NumberPicker)findViewById(R.id.min);

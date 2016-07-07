@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import usach.uoct.patentesuoct.Modelos.Vehiculo;
 import usach.uoct.patentesuoct.R;
+import usach.uoct.patentesuoct.Tools.CustomAdapter;
 import usach.uoct.patentesuoct.Tools.DBHelper;
 
 public class VistaPatente extends AppCompatActivity {
@@ -36,7 +37,7 @@ public class VistaPatente extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 v.vibrate(200);
-                String patenteElegida = (String)parent.getItemAtPosition(position);
+                String patenteElegida = (String)parent.getAdapter().getItem(position);
                 patenteElegida=patenteElegida.split(" - ")[1];
                 DialogEliminarPatente elim = new DialogEliminarPatente();
                 elim.setPatente(patenteElegida);
@@ -62,6 +63,7 @@ public class VistaPatente extends AppCompatActivity {
     public void refreshList(){
         ArrayList<Vehiculo> vehiculos = dbHelper.getAllVehiculos();
         String[] patentes = new String[vehiculos.size()];
+        boolean[] verdes = new boolean[vehiculos.size()];
         Button b = (Button)findViewById(R.id.btnAgregar);
         b.setEnabled(vehiculos.size()!=10);
 
@@ -71,8 +73,10 @@ public class VistaPatente extends AppCompatActivity {
             }else{
                 patentes[i] = "Patente sin nombre - " + vehiculos.get(i).getPatente();
             }
+            verdes[i]=vehiculos.get(i).isSelloVerde();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,patentes);
+
+        CustomAdapter adapter = new CustomAdapter(this,patentes,verdes);
         ListView lv = (ListView)findViewById(R.id.listaPatentesAll);
         lv.setAdapter(adapter);
     }

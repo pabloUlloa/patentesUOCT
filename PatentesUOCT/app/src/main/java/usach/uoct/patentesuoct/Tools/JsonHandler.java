@@ -59,15 +59,17 @@ public class JsonHandler {
                 if(aux.length()<1){
                     return aux;
                 }
+                if(aux.equals("No Aplica"))return aux;
                 aux=aux.replace(" ","").replace("-","");
-                for(int i=0;i<aux.length();i++){
-                    res+="-"+aux.charAt(i);
+                    for(int i=0;i<aux.length();i++){
+                        res+="-"+aux.charAt(i);
                 }
             }else{
                 String aux = jo.getJSONObject("restriccion").getJSONObject("manana").getString("digitos_con_sello");
                 if(aux.length()<1){
                     return aux;
                 }
+                if(aux.equals("No Aplica"))return aux;
                 aux=aux.replace(" ","").replace("-","");
                 for(int i=0;i<aux.length();i++){
                     res+="-"+aux.charAt(i);
@@ -76,7 +78,7 @@ public class JsonHandler {
         } catch (JSONException e1){
             e1.printStackTrace();
         }
-        return res.substring(0);
+        return res.substring(1);
     }
 
     public static String getRestriccion(String result) {
@@ -105,7 +107,7 @@ public class JsonHandler {
         } catch (JSONException e1) {
             e1.printStackTrace();
         }
-        return res.substring(0);
+        return res.substring(1);
     }// getRestruccionHoy(Context c)
 
 

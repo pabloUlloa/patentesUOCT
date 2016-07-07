@@ -97,71 +97,73 @@
 
         <ListView
             android:orientation="vertical"
-            android:layout_width="244dp"
+            android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:background="#00b9e1"
+            android:background="@drawable/corners"
             android:padding="10dp"
+            android:choiceMode="singleChoice"
             android:id="@+id/listaPatentesAll"
             android:layout_below="@+id/textView55"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal">
-
         </ListView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nueva Patente:"
-            android:id="@+id/textView56"
-            android:textSize="20dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_above="@+id/patenteInput"
-            android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/patenteInput"
-            android:hint="XX-BB-00"
-            android:layout_gravity="center_horizontal"
-            android:layout_above="@+id/selloCheck"
-            android:layout_alignRight="@+id/linearLayout"
-            android:layout_alignEnd="@+id/linearLayout"
-            android:capitalize="characters"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
-
-        <EditText
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/aliasInput"
-            android:elegantTextHeight="true"
-            android:hint="Alias"
-            android:layout_gravity="center_horizontal"
-            android:layout_above="@+id/selloCheck"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sello verde"
-            android:id="@+id/selloCheck"
-            android:checked="false"
-            android:textSize="15dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_above="@+id/linearLayout"
-            android:layout_alignLeft="@+id/textView56"
-            android:layout_alignStart="@+id/textView56" />
-
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:id="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/greycorners2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nueva Patente:"
+                android:id="@+id/textView56"
+                android:textSize="20dp"
+                android:textColor="#eeeeee"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@+id/patenteInput"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/patenteInput"
+                android:hint="XX-BB-00"
+                android:textColor="#eeeeee"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@+id/selloCheck"
+                android:layout_alignRight="@+id/linearLayout"
+                android:layout_alignEnd="@+id/linearLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/aliasInput"
+                android:elegantTextHeight="true"
+                android:hint="Alias"
+                android:textColor="#eeeeee"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@+id/selloCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sello verde"
+                android:id="@+id/selloCheck"
+                android:checked="false"
+                android:textSize="15dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal"
+                android:layout_above="@+id/linearLayout"
+                android:layout_alignLeft="@+id/textView56"
+                android:layout_alignStart="@+id/textView56" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -171,10 +173,10 @@
                 android:background="@drawable/corners"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
                 android:onClick="clickAgregar"
                 android:enabled="true" />
-
         </LinearLayout>
 
     </LinearLayout>

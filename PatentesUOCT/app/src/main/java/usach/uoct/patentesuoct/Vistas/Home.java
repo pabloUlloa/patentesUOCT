@@ -51,9 +51,9 @@ public class Home extends AppCompatActivity {
         as.startAlarm();
         as.startUserAlarms();
         t=(TextView)findViewById(R.id.textSinSello);
-        t.setText((CharSequence)rSinSello);
+        t.setText("Sin sello verde: "+rSinSello);
         t=(TextView)findViewById(R.id.textConSello);
-        t.setText((CharSequence)rConSello);
+        t.setText("Con sello verde: "+rConSello);
         t=(TextView)findViewById(R.id.fecha);
         t.setText(fecha);
 

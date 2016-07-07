@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">Restriccion UOCT</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_configuracion">Configuracion</string>
-    <string name="title_activity_patente">Patente</string>
-    <string name="title_activity_horario">Horario</string>
-    <string name="title_activity_faq">FAQ</string>
-    <string name="title_activity_situacion_ambiental">SituacionAmbiental</string>
+    <string name="title_activity_patente">Configurar Patentes</string>
+    <string name="title_activity_horario">Configurar Horarios de alarmas</string>
+    <string name="title_activity_faq">Preguntas Frecuentes</string>
+    <string name="title_activity_situacion_ambiental">Ejes Ambientales</string>
     <string name="title_activity_main">Restriccion UOCT</string>
     <string name="home_btn">Inicio</string>
     <string name="faq_btn">Preguntas</string>
-    <string name="sit_btn">Calidad Aire</string>
+    <string name="sit_btn">Ejes</string>
     <string name="conf_btn">Configurar</string>
 </resources>
